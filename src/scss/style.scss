@@ -1,0 +1,114 @@
+@import 'variable';
+
+.display{
+    display:flex;
+    width:100%;
+    height:200px;
+    justify-content: space-between;
+}
+
+.date{
+    width:50%;
+    text-align: left;
+    padding:2rem 1rem;
+    color:#ccc;
+}
+
+.quote{
+    text-align: center;
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    h3{    
+        font-family: 'Ewert', cursive;
+        padding:0.5rem 1rem;
+        font-size:2rem;
+        color:#ccc;
+    }
+    .button{
+        font-family: 'Galada', cursive;
+        border:none;
+        outline:none;
+        background-color:rgba(0,0,0,0.5);
+        color:#ccc;
+        padding:0.5rem 1rem;
+        font-size:20px;
+        border-radius:10px;
+        margin:0.5rem 1rem;
+        transition:transform 0.5s;
+        border:2px solid transparent;
+        &:hover{
+            transform:scale(1.2);
+            box-shadow:2px 2px 2px rgba(0,0,0,0.4);
+            border:2px solid #999;
+        }
+        &:active{
+            transform:scale(0.9);
+            box-shadow:inset 2px 2px 2px rgba(0,0,0,0.4);
+        }
+    }
+    p{
+        font-size:28px;
+        padding:4rem 1rem 1rem 1rem;
+        color:#ccc;
+    }
+}
+
+.temp{
+    width:50%;
+    text-align: right;
+    padding:2rem 1rem;
+    color:#ccc;
+}
+
+.far{
+    animation-name: rotating;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-direction:forwards;
+    animation-iteration-count: infinite;
+}
+
+.update_again{
+    cursor: pointer;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotating{
+    from{
+        transform:rotateZ(0deg);
+    }
+    to{
+        transform:rotateZ(360deg);
+    }
+}
+
+@keyframes Sizer{
+    from{
+        font-size:1rem;
+        color:red;
+    }
+    to{
+        color:snow;
+    }
+}
+
+@media screen and (max-width:550px){
+    .display{
+        height:120px;
+    }
+    .quote{
+        h3{
+            font-size:1.5rem;
+        }
+        .button{
+            font-size:1rem;
+        }
+        p{
+            font-size:1rem;
+            padding:2rem 10px;
+        }
+    }
+}
